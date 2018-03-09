@@ -11,10 +11,17 @@ def insertionSort(lst):
             index -= 1
     return lst
 
-print(insertionSort(sample1))
-            
+import numpy as np          
 def mergesort(lst):
     n = len(lst)
-    sub1 = lst[:int(n/2)]
-    sub2 = lst[int(n/2):]
-    while 
+    lst = np.asarray(lst).reshape(n,1)
+    if n%2 == 1:
+        extra = lst[-1]
+        lst = np.delete(lst, -1)
+        lst = lst.reshape(int(n/2), 2)
+        lst = np.append(lst, extra)
+    else:
+        lst = lst.reshape(int(n/2), 2)
+
+
+    return lst
