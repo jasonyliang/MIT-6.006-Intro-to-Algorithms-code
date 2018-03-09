@@ -17,4 +17,4 @@ def is_min_heap(lst):
             return False
     return heap
 print(x)
-print(is_max_heap(x))
+print(is_min_heap(x))
