@@ -26,28 +26,6 @@ def mergesort(lst):
 
     return lst
 
-def merge_sort(L):
-    if len(L) > 1:
-        q = len(L)//2
-        left = merge_sort(L[:q])
-        right = merge_sort(L[q:])
-        return merge(left,right)
-    return L
-def merge(left,right):
-    A = []
-    i = 0
-    j = 0
-    while i < len(left) and j < len(right):
-        if left[i] < right[j]:
-            A.append(left[i])
-            i += 1
-        else:
-            A.append(right[j])
-            j += 1
-    A += left[i:] #If two lists are of different length, the while loop stops when the elements in the shorter
-    A += right[j:] #list are all appended. Therefore, we need to append whatever is left in the longer list.
-    return A
-
 def new_merge(lst):
     if len(lst)>1:
         cut = int(len(lst)/2)
