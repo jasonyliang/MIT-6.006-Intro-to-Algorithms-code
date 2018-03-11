@@ -28,9 +28,9 @@ def heapify(lst, n, i):
     parent = i
     left = 2*i + 1
     right = (2*i + 1) + 1
-    if left < n and lst[left] > arr[i]:
+    if left < n and lst[left] > lst[i]:
         parent = left
-    if right < n and lst[right] > arr[largest]:
+    if right < n and lst[right] > lst[parent]:
         parent = right
 
     if parent != i:
