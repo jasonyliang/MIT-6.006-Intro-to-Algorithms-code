@@ -16,8 +16,7 @@ def is_min_heap(lst):
         else:
             return False
     return heap
-print(x)
-print(is_min_heap(x))
+
 
 def heapify(lst, n, i):
     '''
@@ -36,6 +35,17 @@ def heapify(lst, n, i):
     if parent != i:
         lst[i], lst[parent] = lst[parent], lst[i]
         heapify(lst, n, parent) #heapify the root since we switched it
-
+def heapsort(lst):
+    n = len(lst)
+    #max heap
+    for i in range(n):
+        heapify(lst,n, i)
+    for i in range(n-1, -1, -1):
+        lst[0], lst[i] = lst[i], lst[0]
+        heapify(lst,i, 0)
+    return(lst)
+ 
     
 
+x= heapsort([2,3,5,5,2,1])
+print(x)
