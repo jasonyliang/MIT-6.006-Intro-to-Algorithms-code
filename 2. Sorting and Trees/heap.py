@@ -18,3 +18,24 @@ def is_min_heap(lst):
     return heap
 print(x)
 print(is_min_heap(x))
+
+def heapify(lst, n, i):
+    '''
+    lst is the list to be sorted
+    n is the length the of list
+    i is the parent node concerned
+    '''
+    parent = i
+    left = 2*i + 1
+    right = (2*i + 1) + 1
+    if left < n and lst[left] > arr[i]:
+        parent = left
+    if right < n and lst[right] > arr[largest]:
+        parent = right
+
+    if parent != i:
+        lst[i], lst[parent] = lst[parent], lst[i]
+        heapify(lst, n, parent) #heapify the root since we switched it
+
+    
+
