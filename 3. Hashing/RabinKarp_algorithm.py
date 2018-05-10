@@ -28,4 +28,19 @@ class Hashfunction:
     def window_text(self):
         return self.text[self.window_start:self.window_end]
 
+def rabinkarp(word, text):
+    if word == '' or text == '':
+        return None
+    if len(word) > len(text):
+        return None
 
+    texthash = Hashfunction(text, len(text))
+    wordhash = Hashfunction(word, len(word))
+    # wordhash.move_window()
+
+    for i in range(len(text) - len(word) + 1):
+        if texthash.hash == wordhash.hash:
+            if texthash.window_text == word:
+                return i
+        texthash.move_window()
+    return None
