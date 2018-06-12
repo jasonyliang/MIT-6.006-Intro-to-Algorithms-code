@@ -10,5 +10,17 @@ def is_prime(x):
     else:
         return True
 
-def RSA(public, p, q):
+def RSA_e(plaintext, p, q):
+    if not is_prime(p) or not is_prime(q):
+        return False
+    n = p * q
+    public = (p - 1) * (q - 1)
+    ct = plaintext**pk%n
+    return ct
+
+def RSA_d(ciphertext, p, q):
+    if not is_prime(p) or not is_prime(q):
+        return False
+    n = p * q
+    private = 
 
