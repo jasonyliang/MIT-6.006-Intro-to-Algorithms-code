@@ -22,5 +22,5 @@ def RSA_d(ciphertext, p, q):
     if not is_prime(p) or not is_prime(q):
         return False
     n = p * q
-    private = 
+    private = #
 

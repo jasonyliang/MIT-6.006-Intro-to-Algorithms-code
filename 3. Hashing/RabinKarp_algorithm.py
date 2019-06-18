@@ -34,13 +34,13 @@ def rabinkarp(word, text):
     if len(word) > len(text):
         return None
 
-    texthash = Hashfunction(text, len(text))
+    texthash = Hashfunction(text, len(word))
     wordhash = Hashfunction(word, len(word))
     # wordhash.move_window()
 
     for i in range(len(text) - len(word) + 1):
         if texthash.hash == wordhash.hash:
-            if texthash.window_text == word:
+            if texthash.window_text() == word:
                 return i
         texthash.move_window()
     return None
